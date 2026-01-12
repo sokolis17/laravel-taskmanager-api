@@ -16,5 +16,11 @@ class Task extends Model
     public function project(){
        return $this->belongsTo(Project::class);
     }
+    protected function casts(): array
+{
+    return [
+        'due_date' => 'date',
+    ];
+}
 
 }
